@@ -25,6 +25,16 @@ describe("Rover class", function() {
     expect(messageName).toEqual('New Message');
   });
 
+ // Test 9
+ it("response returned by receiveMessage includes two results if two commands are sent in the message", function(){
+    let rover = new Rover(64863);
+    let commands = [new Command('Type 1'), new Command('Type 2')];
+    let message = new Message('Message Name', commands);
+    let messageResults = rover.receiveMessage(message);
+    expect(messageResults['results'].length).toEqual(commands.length);
+ });
+
+ 
   // 7 tests here!
 
 });
