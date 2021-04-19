@@ -34,7 +34,15 @@ describe("Rover class", function() {
     expect(messageResults['results'].length).toEqual(commands.length);
  });
 
- 
+ // Test 10
+ it("responds correctly to status check command", function(){
+   let rover = new Rover(64863);
+   let command = new Command('STATUS_CHECK');
+   let message = new Message('Message Names', [command]);
+   let messageResults = rover.receiveMessage(message);
+   expect(messageResults['roverStatus']).toEqual('NORMAL');
+ });
+
   // 7 tests here!
 
 });
